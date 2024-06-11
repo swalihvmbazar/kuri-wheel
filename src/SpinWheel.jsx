@@ -69,7 +69,7 @@ const SpinWheel = () => {
                         radiusLineColor="#ffffff"
                         radiusLineWidth={3}
                         textDistance={60}
-                        innerRadius={10}
+                        innerRadius={15}
                         outerRadius={500}
                         backgroundColors={['#ffcc00']}
                         onStopSpinning={() => {
