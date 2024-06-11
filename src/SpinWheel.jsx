@@ -91,8 +91,7 @@ const SpinWheel = () => {
                             <h1 className='text-2xl font-bold mb-10 text-gray-700'>Congratulations</h1>
 
                             <div className='h-[200px] aspect-square rounded-full overflow-hidden '>
-                                {avatarImg &&
-                                    <img src={`assets/avatars/${result.img}`} alt="" className='w-full h-full object-cover' />}
+                                <img src={`assets/avatars/${result.img}`} alt="" className='w-full h-full object-cover' />
                             </div>
                             <h2 className='text-xl mt-10 text-gray-500'>Mr. {result?.option}</h2>
                         </div>
