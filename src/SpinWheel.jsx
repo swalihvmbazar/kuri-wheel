@@ -23,7 +23,6 @@ const data = [
 const SpinWheel = () => {
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
-    const [avatarImg, setAvatarImg] = useState(null);
     const animatinRef = useRef();
     const lottieRef = useRef();
 
@@ -36,10 +35,8 @@ const SpinWheel = () => {
         if (!mustSpin) {
             const newPrizeNumber = Math.floor(Math.random() * data.length);
             setPrizeNumber(newPrizeNumber);
-            const image = await import(`./assets/avatars/${data[newPrizeNumber].img}`);
-            setAvatarImg(image.default);
             setMustSpin(true);
-           
+
 
         }
     }
@@ -95,7 +92,7 @@ const SpinWheel = () => {
 
                             <div className='h-[200px] aspect-square rounded-full overflow-hidden '>
                                 {avatarImg &&
-                                    <img src={avatarImg} alt="" className='w-full h-full object-cover' />}
+                                    <img src={`assets/avatars/${result.img}`} alt="" className='w-full h-full object-cover' />}
                             </div>
                             <h2 className='text-xl mt-10 text-gray-500'>Mr. {result?.option}</h2>
                         </div>
