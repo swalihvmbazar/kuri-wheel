@@ -21,6 +21,7 @@ const data = [
 ];
 
 const SpinWheel = () => {
+    
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
     const [avatar, setAvatar] = useState(null);
@@ -43,7 +44,6 @@ const SpinWheel = () => {
     }
 
     const [result, setResult] = useState(null)
-
 
 
 
@@ -79,7 +79,7 @@ const SpinWheel = () => {
                             animatinRef.current.play();
                         }}
                     />
-                    <button onClick={handleSpinClick} className='bg-red-600 p-2 h-[45px] text-white rounded absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]'>Spin</button>
+                    <button onClick={handleSpinClick} className='bg-red-600 p-2 h-[45px] md:h-[100px] md:w-[100px] text-white rounded absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]'>Spin</button>
                 </div>
                 {/* {result && <div className="mt-4 text-xl">Congratulations!  {result}</div>} */}
 
