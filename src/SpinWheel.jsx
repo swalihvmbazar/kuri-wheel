@@ -8,7 +8,7 @@ import Lottie from 'lottie-react';
 
 const data = [
     { option: 'Mansoor', style: { backgroudColor: 'red' }, img: 'mansoor.jpg' },
-    { option: 'Uvais', img: 'uvais.jpg' },
+    // { option: 'Uvais', img: 'uvais.jpg' },
     { option: 'Irshad molyar', img: 'irshad.jpg' },
     { option: 'Jinshad', img: 'jinshad.jpg' },
     { option: 'Swalih', img: 'swaih.jpg' },
