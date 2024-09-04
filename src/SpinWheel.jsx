@@ -45,7 +45,7 @@ const SpinWheel = () => {
             const newPrizeNumber = Math.floor(Math.random() * shuffleData.length);
             setPrizeNumber(newPrizeNumber);
             setMustSpin(true);
-            setAvatar(`assets/avatars/${data[newPrizeNumber].img}`)
+            setAvatar(`assets/avatars/${shuffleData[newPrizeNumber].img}`)
 
         }
     }
