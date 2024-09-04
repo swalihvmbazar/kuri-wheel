@@ -19,6 +19,13 @@ const data = [
     { option: 'Mubashir', img: 'mubashir.jpg' },
     // { option: 'Mubashir & Uvais' },
 ];
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 const SpinWheel = () => {
     
@@ -28,14 +35,14 @@ const SpinWheel = () => {
     const animatinRef = useRef();
     const lottieRef = useRef();
 
-
+    const shuffleData =shuffleArray(data);
 
     const handleSpinClick = async () => {
         setResult(null)
         animatinRef.current.stop();
         lottieRef.current.classList.remove('z-50')
         if (!mustSpin) {
-            const newPrizeNumber = Math.floor(Math.random() * data.length);
+            const newPrizeNumber = Math.floor(Math.random() * shuffleData.length);
             setPrizeNumber(newPrizeNumber);
             setMustSpin(true);
             setAvatar(`assets/avatars/${data[newPrizeNumber].img}`)
@@ -62,7 +69,7 @@ const SpinWheel = () => {
                     <Wheel
                         mustStartSpinning={mustSpin}
                         prizeNumber={prizeNumber}
-                        data={data}
+                        data={shuffleData}
                         outerBorderColor="#f2f2f2"
                         outerBorderWidth={10}
                         innerBorderColor="#ffffff"
@@ -75,7 +82,7 @@ const SpinWheel = () => {
                         onStopSpinning={() => {
                             lottieRef.current.classList.add('z-50')
                             setMustSpin(false);
-                            setResult(data[prizeNumber])
+                            setResult(shuffleData[prizeNumber])
                             animatinRef.current.play();
                         }}
                     />
