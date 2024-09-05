@@ -45,7 +45,7 @@ const SpinWheel = () => {
             const newPrizeNumber = Math.floor(Math.random() * shuffleData.length);
             setPrizeNumber(newPrizeNumber);
             setMustSpin(true);
-            setAvatar(`assets/avatars/${shuffleData[newPrizeNumber].img}`)
+            setAvatar(`assets/avatars/${data[newPrizeNumber].img}`)
 
         }
     }
@@ -69,7 +69,7 @@ const SpinWheel = () => {
                     <Wheel
                         mustStartSpinning={mustSpin}
                         prizeNumber={prizeNumber}
-                        data={shuffleData}
+                        data={data}
                         outerBorderColor="#f2f2f2"
                         outerBorderWidth={10}
                         innerBorderColor="#ffffff"
@@ -82,7 +82,7 @@ const SpinWheel = () => {
                         onStopSpinning={() => {
                             lottieRef.current.classList.add('z-50')
                             setMustSpin(false);
-                            setResult(shuffleData[prizeNumber])
+                            setResult(data[prizeNumber])
                             animatinRef.current.play();
                         }}
                     />
